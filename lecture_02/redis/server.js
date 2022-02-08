@@ -11,7 +11,7 @@ const makeTestPromise = () => {
   return new Promise((fulfill, reject) => {
     setTimeout(() => {
       fulfill({ status: 'Good' });
-    }, 4000);
+    }, 4);
   });
 };
 
@@ -58,7 +58,7 @@ app.get('/', async (req, res) => {
   );
 });
 
-app.listen(3001, () => {
+app.listen(3000, () => {
   console.log("We've now got a server!");
-  console.log('Your routes will be running on http://localhost:3001');
+  console.log('Your routes will be running on http://localhost:3000');
 });
