@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Child from './Child';
 
 function PropsExample(props) {
   let h1 = null;
@@ -15,6 +16,7 @@ function PropsExample(props) {
       {h1}
       <h2>{props.user.name}</h2>
       <button onClick={props.handleClick}>{props.user.username}</button>
+      <Child greeting={props.greeting} />
     </div>
   );
 }

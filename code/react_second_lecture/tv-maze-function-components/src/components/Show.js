@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import noImage from '../img/download.jpeg';
 import {
   makeStyles,
@@ -44,6 +44,8 @@ const Show = (props) => {
   const [showData, setShowData] = useState(undefined);
   const [loading, setLoading] = useState(true);
   const classes = useStyles();
+  let { id } = useParams();
+
   const tConvert = (time) => {
     // Check correct time format and split into components
     time = time
@@ -69,7 +71,7 @@ const Show = (props) => {
     async function fetchData() {
       try {
         const { data: show } = await axios.get(
-          `http://api.tvmaze.com/shows/${props.match.params.id}`
+          `http://api.tvmaze.com/shows/${id}`
         );
         setShowData(show);
         setLoading(false);
@@ -79,7 +81,7 @@ const Show = (props) => {
       }
     }
     fetchData();
-  }, [props.match.params.id]);
+  }, [id]);
 
   let summary = null;
   const regex = /(<([^>]+)>)/gi;

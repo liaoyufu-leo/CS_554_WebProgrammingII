@@ -14,7 +14,9 @@ function App() {
       <PropsExample
         user={{ name: 'Patrick Hill', username: 'graffixnyc' }}
         handleClick={handle_func}
+        greeting={greeting}
       />
+      <br />
     </div>
   );
 }

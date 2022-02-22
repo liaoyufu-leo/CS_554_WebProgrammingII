@@ -9,10 +9,16 @@ class App extends Component {
       counter: 0
     };
   }
+
+  updateCounter = (counter) => {
+    this.setState({ counter: counter });
+  };
+
   render() {
     return (
       <div>
-        <Clock date={new Date()} />
+        <p>App Counter: {this.state.counter}</p>
+        <Clock date={new Date()} updateApp={this.updateCounter} />
       </div>
     );
   }

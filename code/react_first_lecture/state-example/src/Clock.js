@@ -21,6 +21,8 @@ class Clock extends Component {
       date: new Date(),
       counter: state.counter + 1
     }));
+
+    this.props.updateApp(this.state.counter);
   }
   render() {
     return (
