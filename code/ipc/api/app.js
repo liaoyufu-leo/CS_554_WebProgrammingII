@@ -16,7 +16,7 @@ app.post('/send-message', async (req, res) => {
     expectsResponse: false
   });
 
-  res.json({ sent: response });
+  res.json({sent: response});
 });
 
 app.post('/send-message-with-reply', async (req, res) => {
@@ -31,7 +31,7 @@ app.post('/send-message-with-reply', async (req, res) => {
 
     res.json(response);
   } catch (e) {
-    res.json({ error: e.message });
+    res.json({error: e.message});
   }
 });
 

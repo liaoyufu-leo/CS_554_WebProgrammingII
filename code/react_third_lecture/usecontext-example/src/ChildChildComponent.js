@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, {useContext} from 'react';
 import ThemeContext from './ThemeContext';
 
 const ChildChildComponent = () => {
@@ -7,7 +7,7 @@ const ChildChildComponent = () => {
     <div>
       <p style={theme}>Hello World from the child's child!</p>
 
-      <button onClick={() => setTheme({ color: 'purple', fontWeight: 'bold' })}>
+      <button onClick={() => setTheme({color: 'purple', fontWeight: 'bold'})}>
         Set context from child's child
       </button>
     </div>

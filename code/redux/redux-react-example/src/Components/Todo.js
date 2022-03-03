@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import {useDispatch} from 'react-redux';
 import actions from '../actions';
 
 function Todo(props) {
@@ -14,7 +14,7 @@ function Todo(props) {
   };
 
   return (
-    <div className="todo-wrapper">
+    <div className='todo-wrapper'>
       <table>
         <tbody>
           <tr>

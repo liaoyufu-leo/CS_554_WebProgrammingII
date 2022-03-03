@@ -1,7 +1,7 @@
 import Layout from '../../../components/MyLayout';
 import axios from 'axios';
 import Image from 'next/image';
-export default function show({ data }) {
+export default function show({data}) {
   return (
     <Layout>
       <div>
@@ -33,12 +33,12 @@ export default function show({ data }) {
 
 export async function getServerSideProps(context) {
   // console.log(context);
-  const { id } = context.query;
+  const {id} = context.query;
   console.log(id);
 
-  const { data } = await axios.get('http://api.tvmaze.com/shows/' + id);
+  const {data} = await axios.get('http://api.tvmaze.com/shows/' + id);
   console.log(`Fetched a show: ${data.name}`);
   return {
-    props: { data }
+    props: {data}
   };
 }

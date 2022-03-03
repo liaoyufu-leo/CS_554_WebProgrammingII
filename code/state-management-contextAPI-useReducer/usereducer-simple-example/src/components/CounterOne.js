@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, {useReducer} from 'react';
 const intitalState = 0;
 const reducer = (state, action) => {
   switch (action) {

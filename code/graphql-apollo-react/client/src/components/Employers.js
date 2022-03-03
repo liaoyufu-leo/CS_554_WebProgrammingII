@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import './App.css';
 
 import AddModal from './modals/AddModal';
-import { useQuery } from '@apollo/client';
+import {useQuery} from '@apollo/client';
 import queries from '../queries';
 
 function Employers() {
   const [showAddModal, setShowAddModal] = useState(false);
-  const { loading, error, data } = useQuery(
+  const {loading, error, data} = useQuery(
     queries.GET_EMPLOYERS_WITH_EMPLOYEES,
     {
       fetchPolicy: 'cache-and-network'
@@ -23,11 +23,11 @@ function Employers() {
   };
 
   if (data) {
-    const { employers } = data;
+    const {employers} = data;
 
     return (
       <div>
-        <button className="button" onClick={handleOpenAddModal}>
+        <button className='button' onClick={handleOpenAddModal}>
           Create Employer
         </button>
         <br />
@@ -35,9 +35,9 @@ function Employers() {
         <div>
           {employers.map((employer) => {
             return (
-              <div className="card" key={employer._id}>
-                <div className="card-body">
-                  <h5 className="card-title">{employer.name}</h5>
+              <div className='card' key={employer._id}>
+                <div className='card-body'>
+                  <h5 className='card-title'>{employer.name}</h5>
                   <span>Number of Employees:</span> {employer.numOfEmployees}
                   <br />
                   <br />
@@ -63,7 +63,7 @@ function Employers() {
           <AddModal
             isOpen={showAddModal}
             handleClose={handleCloseModals}
-            modal="addEmployer"
+            modal='addEmployer'
           />
         )}
       </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import './App.css';
 
@@ -11,8 +11,9 @@ function App() {
 
     async function fetchData() {
       try {
-        const { data } = await axios.get('http://api.tvmaze.com/shows');
+        const {data} = await axios.get('http://api.tvmaze.com/shows');
         setShowData(data);
+
         setLoading(false);
       } catch (e) {
         console.log(e);
@@ -25,7 +26,7 @@ function App() {
     return <div>Loading...</div>;
   } else {
     return (
-      <div className="App">
+      <div className='App'>
         <ul>
           {shows && shows.map((show) => <li key={show.id}>{show.name}</li>)};
         </ul>

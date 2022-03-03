@@ -1,5 +1,5 @@
 'use strict';
-Object.defineProperty(exports, '__esModule', { value: true });
+Object.defineProperty(exports, '__esModule', {value: true});
 const express = require('express');
 const pokemons_1 = require('./routes/pokemons');
 var totalRequests = 0;
@@ -24,7 +24,7 @@ class App {
   }
   config() {
     this.app.use(express.json());
-    this.app.use(express.urlencoded({ extended: false }));
+    this.app.use(express.urlencoded({extended: false}));
     this.app.use(this.Logger);
   }
 }

@@ -150,7 +150,7 @@ if (typeof jQuery === 'undefined') {
 
       for (var name in TransitionEndEvent) {
         if (el.style[name] !== undefined) {
-          return { end: TransitionEndEvent[name] };
+          return {end: TransitionEndEvent[name]};
         }
       }
 
@@ -1639,7 +1639,7 @@ if (typeof jQuery === 'undefined') {
           $(dropdown).on('click', Dropdown._clearMenus);
         }
 
-        var relatedTarget = { relatedTarget: this };
+        var relatedTarget = {relatedTarget: this};
         var showEvent = $.Event(Event.SHOW, relatedTarget);
 
         $(parent).trigger(showEvent);
@@ -1702,7 +1702,7 @@ if (typeof jQuery === 'undefined') {
 
         for (var i = 0; i < toggles.length; i++) {
           var parent = Dropdown._getParentFromElement(toggles[i]);
-          var relatedTarget = { relatedTarget: toggles[i] };
+          var relatedTarget = {relatedTarget: toggles[i]};
 
           if (!$(parent).hasClass(ClassName.OPEN)) {
             continue;

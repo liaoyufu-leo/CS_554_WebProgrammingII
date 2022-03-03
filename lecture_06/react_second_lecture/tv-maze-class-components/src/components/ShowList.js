@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import SearchShows from './SearchShows';
 import noImage from '../img/download.jpeg';
 
@@ -16,17 +16,17 @@ class ShowList extends Component {
   async getShows() {
     if (this.state.searchTerm) {
       try {
-        const { data } = await axios.get(
+        const {data} = await axios.get(
           'http://api.tvmaze.com/search/shows?q=' + this.state.searchTerm
         );
-        this.setState({ searchData: data });
+        this.setState({searchData: data});
       } catch (e) {
         console.log(e);
       }
     } else {
       try {
-        const { data } = await axios.get('http://api.tvmaze.com/shows');
-        this.setState({ data: data });
+        const {data} = await axios.get('http://api.tvmaze.com/shows');
+        this.setState({data: data});
       } catch (e) {
         console.log(e);
       }
@@ -37,16 +37,16 @@ class ShowList extends Component {
   }
 
   searchValue = (value) => {
-    this.setState({ searchTerm: value }, () => {
+    this.setState({searchTerm: value}, () => {
       this.getShows();
     });
   };
   buildListItem = (show) => {
     let img = null;
     if (show.image && show.image.medium) {
-      img = <img alt="Show" src={show.image.medium} />;
+      img = <img alt='Show' src={show.image.medium} />;
     } else {
-      img = <img alt="Show" src={noImage} />;
+      img = <img alt='Show' src={noImage} />;
     }
 
     return (
@@ -66,7 +66,7 @@ class ShowList extends Component {
       li =
         this.state.searchData &&
         this.state.searchData.map((shows) => {
-          let { show } = shows;
+          let {show} = shows;
           return this.buildListItem(show);
         });
     } else {
@@ -77,9 +77,9 @@ class ShowList extends Component {
         });
     }
     body = (
-      <div className="App-body">
+      <div className='App-body'>
         <SearchShows searchValue={this.searchValue} />
-        <ul className="list-unstyled">{li}</ul>
+        <ul className='list-unstyled'>{li}</ul>
       </div>
     );
 

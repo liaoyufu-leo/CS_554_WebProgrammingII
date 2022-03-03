@@ -1,4 +1,4 @@
-const { ApolloServer, gql } = require('apollo-server');
+const {ApolloServer, gql} = require('apollo-server');
 const mongoCollections = require('./config/mongoCollections');
 const uuid = require('uuid'); //for generating _id's
 
@@ -61,12 +61,12 @@ const resolvers = {
   Query: {
     employer: async (_, args) => {
       const employers = await employerCollection();
-      const employer = await employers.findOne({ _id: args._id });
+      const employer = await employers.findOne({_id: args._id});
       return employer;
     },
     employee: async (_, args) => {
       const employees = await employeeCollection();
-      const employee = await employees.findOne({ _id: args._id });
+      const employee = await employees.findOne({_id: args._id});
       return employee;
     },
     employers: async () => {
@@ -92,7 +92,7 @@ const resolvers = {
     employees: async (parentValue) => {
       const employees = await employeeCollection();
       const employs = await employees
-        .find({ employerId: parentValue._id })
+        .find({employerId: parentValue._id})
         .toArray();
       return employs;
     }
@@ -101,7 +101,7 @@ const resolvers = {
     employer: async (parentValue) => {
       //console.log(`parentValue in Employee`, parentValue);
       const employers = await employerCollection();
-      const employer = await employers.findOne({ _id: parentValue.employerId });
+      const employer = await employers.findOne({_id: parentValue.employerId});
       return employer;
     }
   },
@@ -119,8 +119,8 @@ const resolvers = {
     },
     removeEmployee: async (_, args) => {
       const employees = await employeeCollection();
-      const oldEmployee = await employees.findOne({ _id: args._id });
-      const deletionInfo = await employees.removeOne({ _id: args._id });
+      const oldEmployee = await employees.findOne({_id: args._id});
+      const deletionInfo = await employees.removeOne({_id: args._id});
       if (deletionInfo.deletedCount === 0) {
         throw `Could not delete user with _id of ${args._id}`;
       }
@@ -128,7 +128,7 @@ const resolvers = {
     },
     editEmployee: async (_, args) => {
       const employees = await employeeCollection();
-      let newEmployee = await employees.findOne({ _id: args._id });
+      let newEmployee = await employees.findOne({_id: args._id});
       if (newEmployee) {
         if (args.firstName) {
           newEmployee.firstName = args.firstName;
@@ -143,7 +143,7 @@ const resolvers = {
             newEmployee.employerId = args.employerId;
           }
         }
-        await employees.updateOne({ _id: args._id }, { $set: newEmployee });
+        await employees.updateOne({_id: args._id}, {$set: newEmployee});
       }
       return newEmployee;
     },
@@ -160,8 +160,8 @@ const resolvers = {
   }
 };
 
-const server = new ApolloServer({ typeDefs, resolvers });
+const server = new ApolloServer({typeDefs, resolvers});
 
-server.listen().then(({ url }) => {
+server.listen().then(({url}) => {
   console.log(`🚀  Server ready at ${url} 🚀`);
 });

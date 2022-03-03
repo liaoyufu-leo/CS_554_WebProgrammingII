@@ -567,7 +567,7 @@ $(function () {
         'second item active'
       );
 
-      $template.trigger($.Event('keydown', { which: 37 }));
+      $template.trigger($.Event('keydown', {which: 37}));
 
       assert.strictEqual(
         $template.find('.carousel-item')[0],
@@ -605,7 +605,7 @@ $(function () {
         'first item active'
       );
 
-      $template.trigger($.Event('keydown', { which: 39 }));
+      $template.trigger($.Event('keydown', {which: 39}));
 
       assert.strictEqual(
         $template.find('.carousel-item')[1],
@@ -643,7 +643,7 @@ $(function () {
         'first item active'
       );
 
-      $template.trigger($.Event('keydown', { which: 39 }));
+      $template.trigger($.Event('keydown', {which: 39}));
 
       assert.strictEqual(
         $template.find('.carousel-item')[0],
@@ -651,7 +651,7 @@ $(function () {
         'first item still active after right arrow press'
       );
 
-      $template.trigger($.Event('keydown', { which: 37 }));
+      $template.trigger($.Event('keydown', {which: 37}));
 
       assert.strictEqual(
         $template.find('.carousel-item')[0],
@@ -696,28 +696,28 @@ $(function () {
         'first item active'
       );
 
-      $input.trigger($.Event('keydown', { which: 39 }));
+      $input.trigger($.Event('keydown', {which: 39}));
       assert.strictEqual(
         $template.find('.carousel-item')[0],
         $template.find('.active')[0],
         'first item still active after right arrow press in <input>'
       );
 
-      $input.trigger($.Event('keydown', { which: 37 }));
+      $input.trigger($.Event('keydown', {which: 37}));
       assert.strictEqual(
         $template.find('.carousel-item')[0],
         $template.find('.active')[0],
         'first item still active after left arrow press in <input>'
       );
 
-      $textarea.trigger($.Event('keydown', { which: 39 }));
+      $textarea.trigger($.Event('keydown', {which: 39}));
       assert.strictEqual(
         $template.find('.carousel-item')[0],
         $template.find('.active')[0],
         'first item still active after right arrow press in <textarea>'
       );
 
-      $textarea.trigger($.Event('keydown', { which: 37 }));
+      $textarea.trigger($.Event('keydown', {which: 37}));
       assert.strictEqual(
         $template.find('.carousel-item')[0],
         $template.find('.active')[0],

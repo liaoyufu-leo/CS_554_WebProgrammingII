@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import AddModal from './modals/AddModal';
 import EditEmployeeModal from './modals/EditEmployeeModal';
 import DeleteEmployeeModal from './modals/DeleteEmployeeModal';
-import { useQuery } from '@apollo/client';
+import {useQuery} from '@apollo/client';
 import queries from '../queries';
 
 function Employees() {
@@ -12,7 +12,7 @@ function Employees() {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [editEmployee, setEditEmployee] = useState(null);
   const [deleteEmployee, setDeleteEmployee] = useState(null);
-  const { loading, error, data } = useQuery(queries.GET_EMPLOYEES, {
+  const {loading, error, data} = useQuery(queries.GET_EMPLOYEES, {
     fetchPolicy: 'cache-and-network'
   });
 
@@ -35,11 +35,11 @@ function Employees() {
     setShowAddModal(true);
   };
   if (data) {
-    const { employees } = data;
+    const {employees} = data;
     console.log(employees);
     return (
       <div>
-        <button className="button" onClick={handleOpenAddModal}>
+        <button className='button' onClick={handleOpenAddModal}>
           Create Employee
         </button>
         <br />
@@ -47,15 +47,15 @@ function Employees() {
 
         {employees.map((employee) => {
           return (
-            <div className="card" key={employee._id}>
-              <div className="card-body">
-                <h5 className="card-title">
+            <div className='card' key={employee._id}>
+              <div className='card-body'>
+                <h5 className='card-title'>
                   {employee.firstName} {employee.lastName}
                 </h5>
                 Employer: {employee.employer.name}
                 <br />
                 <button
-                  className="button"
+                  className='button'
                   onClick={() => {
                     handleOpenEditModal(employee);
                   }}
@@ -63,7 +63,7 @@ function Employees() {
                   Edit
                 </button>
                 <button
-                  className="button"
+                  className='button'
                   onClick={() => {
                     handleOpenDeleteModal(employee);
                   }}
@@ -90,7 +90,7 @@ function Employees() {
           <AddModal
             isOpen={showAddModal}
             handleClose={handleCloseModals}
-            modal="addEmployee"
+            modal='addEmployee'
           />
         )}
 

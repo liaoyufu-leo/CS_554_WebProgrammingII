@@ -1,16 +1,16 @@
 import AppContext from '../context/context';
-import React, { useContext } from 'react';
+import React, {useContext} from 'react';
 function User(props) {
   const context = useContext(AppContext);
   const deleteUser = () => {
     context.userDispatch({
       type: 'DELETE_USER',
-      payload: { id: props.user.id }
+      payload: {id: props.user.id}
     });
   };
 
   return (
-    <div className="todo-wrapper">
+    <div className='todo-wrapper'>
       <table>
         <tbody>
           <tr>

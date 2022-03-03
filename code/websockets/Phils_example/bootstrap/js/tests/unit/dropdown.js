@@ -466,10 +466,10 @@ $(function () {
       $dropdown.parent('.dropdown').on('shown.bs.dropdown', function () {
         assert.ok(true, 'shown was fired');
 
-        $input.trigger('focus').trigger($.Event('keydown', { which: 38 }));
+        $input.trigger('focus').trigger($.Event('keydown', {which: 38}));
         assert.ok($(document.activeElement).is($input), 'input still focused');
 
-        $textarea.trigger('focus').trigger($.Event('keydown', { which: 38 }));
+        $textarea.trigger('focus').trigger($.Event('keydown', {which: 38}));
         assert.ok(
           $(document.activeElement).is($textarea),
           'textarea still focused'
@@ -502,8 +502,8 @@ $(function () {
         .bootstrapDropdown()
         .trigger('click');
 
-      $dropdown.trigger($.Event('keydown', { which: 40 }));
-      $dropdown.trigger($.Event('keydown', { which: 40 }));
+      $dropdown.trigger($.Event('keydown', {which: 40}));
+      $dropdown.trigger($.Event('keydown', {which: 40}));
 
       assert.ok(
         !$(document.activeElement).parent().is('.disabled'),

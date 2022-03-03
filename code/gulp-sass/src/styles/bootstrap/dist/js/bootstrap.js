@@ -5005,6 +5005,6 @@
   exports.Toast = Toast;
   exports.Tooltip = Tooltip;
 
-  Object.defineProperty(exports, '__esModule', { value: true });
+  Object.defineProperty(exports, '__esModule', {value: true});
 });
 //# sourceMappingURL=bootstrap.js.map

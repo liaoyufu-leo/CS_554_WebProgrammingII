@@ -3,7 +3,7 @@
 
 const path = require('path');
 const ip = require('ip');
-const { browsers, browsersKeys } = require('./browsers');
+const {browsers, browsersKeys} = require('./browsers');
 
 const jqueryFile = process.env.USE_OLD_JQUERY
   ? 'https://code.jquery.com/jquery-1.9.1.min.js'

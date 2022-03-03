@@ -1,11 +1,11 @@
 import AppContext from '../context/context';
-import { useContext } from 'react';
+import {useContext} from 'react';
 const All = () => {
   const context = useContext(AppContext);
 
   return (
-    <div className="todos-wrapper">
-      <h2 id="heading">All State</h2>
+    <div className='todos-wrapper'>
+      <h2 id='heading'>All State</h2>
       <h3>Todos</h3>
       <ul>
         {context.todos.map((todo) => {
@@ -38,7 +38,7 @@ const All = () => {
         onClick={() =>
           context.userDispatch({
             type: 'CREATE_USER',
-            payload: { name: 'Mickey Mouse', email: 'MMouse@disney.com' }
+            payload: {name: 'Mickey Mouse', email: 'MMouse@disney.com'}
           })
         }
       >

@@ -57,7 +57,7 @@ var Util = (function ($) {
 
     for (var name in TransitionEndEvent) {
       if (el.style[name] !== undefined) {
-        return { end: TransitionEndEvent[name] };
+        return {end: TransitionEndEvent[name]};
       }
     }
 

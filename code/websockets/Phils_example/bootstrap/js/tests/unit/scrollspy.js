@@ -91,7 +91,7 @@ $(function () {
       var $scrollspy = $section
         .show()
         .find('#scrollspy-example')
-        .bootstrapScrollspy({ target: '#ss-target' });
+        .bootstrapScrollspy({target: '#ss-target'});
 
       $scrollspy.one('scroll', function () {
         assert.ok(
@@ -143,7 +143,7 @@ $(function () {
       var $scrollspy = $section
         .show()
         .find('#scrollspy-example')
-        .bootstrapScrollspy({ target: document.getElementById('#ss-target') });
+        .bootstrapScrollspy({target: document.getElementById('#ss-target')});
 
       $scrollspy.one('scroll', function () {
         assert.ok(
@@ -225,7 +225,7 @@ $(function () {
       $(navbarHtml).appendTo('#qunit-fixture');
       var $content = $(contentHtml)
         .appendTo('#qunit-fixture')
-        .bootstrapScrollspy({ offset: 0, target: '.navbar' });
+        .bootstrapScrollspy({offset: 0, target: '.navbar'});
 
       var done = assert.async();
       var testElementIsActiveAfterScroll = function (element, target) {
@@ -282,7 +282,7 @@ $(function () {
 
       var $content = $(contentHtml)
         .appendTo('#qunit-fixture')
-        .bootstrapScrollspy({ offset: 0, target: '#navigation' });
+        .bootstrapScrollspy({offset: 0, target: '#navigation'});
 
       !(function testActiveElements() {
         if (++times > 3) return done();
@@ -384,7 +384,7 @@ $(function () {
       $(navbarHtml).appendTo('#qunit-fixture');
       var $content = $(contentHtml)
         .appendTo('#qunit-fixture')
-        .bootstrapScrollspy({ offset: 0, target: '.navbar' });
+        .bootstrapScrollspy({offset: 0, target: '.navbar'});
 
       var testElementIsActiveAfterScroll = function (element, target) {
         var deferred = $.Deferred();

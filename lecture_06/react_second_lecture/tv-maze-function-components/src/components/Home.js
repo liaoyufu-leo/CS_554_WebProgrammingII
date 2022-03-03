@@ -9,20 +9,20 @@ const Home = () => {
         by clicking the "Shows" button above
       </p>
 
-      <p className="hometext">
+      <p className='hometext'>
         The application queries two of TV Maze's end-points:{' '}
         <a
-          rel="noopener noreferrer"
-          target="_blank"
-          href="http://api.tvmaze.com/shows"
+          rel='noopener noreferrer'
+          target='_blank'
+          href='http://api.tvmaze.com/shows'
         >
           http://api.tvmaze.com/shows
         </a>{' '}
         and{' '}
         <a
-          rel="noopener noreferrer"
-          target="_blank"
-          href="http://api.tvmaze.com/search/shows?q=SEARCH_TERM"
+          rel='noopener noreferrer'
+          target='_blank'
+          href='http://api.tvmaze.com/search/shows?q=SEARCH_TERM'
         >
           http://api.tvmaze.com/search/shows?q=SEARCH_TERM
         </a>{' '}

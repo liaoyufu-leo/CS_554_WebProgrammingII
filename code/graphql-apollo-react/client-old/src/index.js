@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // / import its ApolloProvider component, and use it as a composing component around your App component
-import { ApolloProvider } from 'react-apollo';
+import {ApolloProvider} from 'react-apollo';
 
 /*The ApolloClient class is used to create the client instance, and the HttpLink and InMemoryCache are used for its mandatory configurations. 
 First, you can create a configured HttpLink instance, which will be fed to the Apollo Client creation.*/
-import { ApolloClient } from 'apollo-client';
-import { HttpLink } from 'apollo-link-http';
-import { InMemoryCache } from 'apollo-cache-inmemory';
+import {ApolloClient} from 'apollo-client';
+import {HttpLink} from 'apollo-link-http';
+import {InMemoryCache} from 'apollo-cache-inmemory';
 
 import './index.css';
 import App from './components/App';
@@ -24,7 +24,7 @@ This can be used for authentication, persisted queries, dynamic uris, and other 
 */
 const httpLink = new HttpLink({
   uri: BASE_URL,
-  onError: ({ networkError, graphQLErrors }) => {
+  onError: ({networkError, graphQLErrors}) => {
     console.log('graphQLErrors', graphQLErrors);
     console.log('networkError', networkError);
   }

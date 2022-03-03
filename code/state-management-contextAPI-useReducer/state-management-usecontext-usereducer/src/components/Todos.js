@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, {useContext, useState} from 'react';
 import Todo from './Todo';
 import AddTodo from './AddTodo';
 import AppContext from '../context/context';
@@ -9,7 +9,7 @@ function Todos() {
   const context = useContext(AppContext);
   console.log(context.todos);
   return (
-    <div className="todo-wrapper">
+    <div className='todo-wrapper'>
       <h2>My Todos</h2>
       <button onClick={() => setBtnToggle(!addBtnToggle)}>Add A Todo</button>
       <br />

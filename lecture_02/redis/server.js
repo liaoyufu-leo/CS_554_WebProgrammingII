@@ -10,34 +10,12 @@ bluebird.promisifyAll(redis.Multi.prototype);
 const makeTestPromise = () => {
   return new Promise((fulfill, reject) => {
     setTimeout(() => {
-      fulfill({ status: 'Good' });
-    }, 4);
+      fulfill({status: 'Good'});
+    }, 5000);
   });
 };
 
-app.get('/old', (req, res) => {
-  let makeTestPromiseResult = makeTestPromise();
-
-  makeTestPromiseResult.then((result) => {
-    res.json(result);
-  });
-});
-
 app.get('/', async (req, res, next) => {
-  /* Old style */
-  /*
-  client.getAsync("homePage").then(cacheForHomePageExists => {
-    res.send(cacheForHomePageExists);
-    if (cacheForHomePageExists) {
-      res.send(cacheForHomePageExists);
-    } else {
-      next();
-    }
-  });*/
-
-  ////////////////////////////////////
-
-  /* New style, effectively identical to old style */
   let cacheForHomePageExists = await client.getAsync('homePage');
   if (cacheForHomePageExists) {
     res.send(cacheForHomePageExists);
@@ -58,7 +36,7 @@ app.get('/', async (req, res) => {
   );
 });
 
-app.listen(3000, () => {
+app.listen(3001, () => {
   console.log("We've now got a server!");
   console.log('Your routes will be running on http://localhost:3000');
 });

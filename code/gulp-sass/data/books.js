@@ -9,11 +9,11 @@ let exportedMethods = {
   getLocalBooks() {
     return new Promise((resolve, reject) => {
       resolve([
-        { 16: 'Peter Pan' },
-        { 132: 'Peter Pan' },
-        { 135: 'Peter Pan' },
-        { 829: 'Peter Pan' },
-        { 1080: 'Peter Pan' }
+        {16: 'Peter Pan'},
+        {132: 'Peter Pan'},
+        {135: 'Peter Pan'},
+        {829: 'Peter Pan'},
+        {1080: 'Peter Pan'}
       ]);
     });
   },

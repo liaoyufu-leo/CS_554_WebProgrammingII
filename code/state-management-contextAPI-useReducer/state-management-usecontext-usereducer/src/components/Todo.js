@@ -1,11 +1,11 @@
 import AppContext from '../context/context';
-import React, { useContext } from 'react';
+import React, {useContext} from 'react';
 function Todo(props) {
   const context = useContext(AppContext);
   const deleteTodo = () => {
     context.todoDispatch({
       type: 'DELETE_TODO',
-      payload: { id: props.todo.id }
+      payload: {id: props.todo.id}
     });
   };
 
@@ -13,17 +13,17 @@ function Todo(props) {
     if (compFlag === 'comp')
       context.todoDispatch({
         type: 'COMPLETE_TODO',
-        payload: { id: props.todo.id }
+        payload: {id: props.todo.id}
       }); //dispatch(actions.completeTodo(props.todo.id));
     if (compFlag === 'uncomp')
       context.todoDispatch({
         type: 'UNCOMPLETE_TODO',
-        payload: { id: props.todo.id }
+        payload: {id: props.todo.id}
       }); //dispatch(actions.uncompleteTodo(props.todo.id));
   };
 
   return (
-    <div className="todo-wrapper">
+    <div className='todo-wrapper'>
       <table>
         <tbody>
           <tr>

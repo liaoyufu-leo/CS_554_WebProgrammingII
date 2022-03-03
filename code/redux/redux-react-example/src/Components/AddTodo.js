@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import {useState} from 'react';
+import {useDispatch} from 'react-redux';
 import actions from '../actions';
 
 function AddTodo() {
   const dispatch = useDispatch();
-  const [formData, setFormData] = useState({ task: '', taskDesc: '' });
+  const [formData, setFormData] = useState({task: '', taskDesc: ''});
 
   const handleChange = (e) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    setFormData((prev) => ({...prev, [e.target.name]: e.target.value}));
   };
   const addTodo = () => {
     dispatch(actions.addTodo(formData.task, formData.taskDesc));
@@ -16,24 +16,24 @@ function AddTodo() {
   };
   console.log(formData);
   return (
-    <div className="add">
-      <div className="input-selection">
+    <div className='add'>
+      <div className='input-selection'>
         <label>
           Todo:
           <input
             onChange={(e) => handleChange(e)}
-            id="task"
-            name="task"
-            placeholder="Todo name..."
+            id='task'
+            name='task'
+            placeholder='Todo name...'
           />
         </label>
         <label>
           Todo Description:
           <input
             onChange={(e) => handleChange(e)}
-            id="taskDesc"
-            name="taskDesc"
-            placeholder="Todo Description..."
+            id='taskDesc'
+            name='taskDesc'
+            placeholder='Todo Description...'
           />
         </label>
       </div>

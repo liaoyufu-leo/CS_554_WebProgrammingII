@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -17,7 +17,7 @@ function Counter(props) {
     setCounter(counter - 5);
   };
   return (
-    <div className="Counter">
+    <div className='Counter'>
       Foo passed as prop from Counter Container: {props.foo}
       <br />
       Counter Component Count State: {counter}

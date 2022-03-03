@@ -1,4 +1,4 @@
-import { v4 as uuid } from 'uuid';
+import {v4 as uuid} from 'uuid';
 const initialTodoState = [
   {
     id: uuid(),
@@ -11,7 +11,7 @@ let copyState = null;
 let index = 0;
 
 const reducer = (state, action) => {
-  const { type, payload } = action;
+  const {type, payload} = action;
   switch (type) {
     case 'CREATE_TODO':
       console.log('payload', payload);

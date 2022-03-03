@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import {useState} from 'react';
+import {useSelector} from 'react-redux';
 import AddUser from './AddUser';
 import User from './User';
 function Users() {
@@ -7,7 +7,7 @@ function Users() {
   const allUsers = useSelector((state) => state.users);
   console.log('allUsers', allUsers);
   return (
-    <div className="todo-wrapper">
+    <div className='todo-wrapper'>
       <h2>Users</h2>
       <button onClick={() => setBtnToggle(!addBtnToggle)}>Add A User</button>
       <br />

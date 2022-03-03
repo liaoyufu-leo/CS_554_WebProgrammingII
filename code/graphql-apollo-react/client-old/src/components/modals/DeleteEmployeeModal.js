@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 //Import Query from react-apollo
-import { Mutation } from 'react-apollo';
+import {Mutation} from 'react-apollo';
 import ReactModal from 'react-modal';
 
 //Import the file where my query constants are defined
@@ -39,11 +39,11 @@ class DeleteEmployeeModal extends Component {
   }
 
   handleOpenDeleteModal() {
-    this.setState({ showDeleteModal: true });
+    this.setState({showDeleteModal: true});
   }
 
   handleCloseDeleteModal() {
-    this.setState({ showDeleteModal: false });
+    this.setState({showDeleteModal: false});
     this.props.handleClose(false);
   }
   render() {
@@ -51,9 +51,9 @@ class DeleteEmployeeModal extends Component {
       <div>
         {/*Add Employee Modal */}
         <ReactModal
-          name="deleteModal"
+          name='deleteModal'
           isOpen={this.state.showDeleteModal}
-          contentLabel="Delete Employee"
+          contentLabel='Delete Employee'
           style={customStyles}
         >
           {/*Here we set up the mutation, since I want the data on the page to update
@@ -65,8 +65,8 @@ class DeleteEmployeeModal extends Component {
 					*/}
           <Mutation
             mutation={queries.DELETE_EMPLOYEE}
-            update={(cache, { data: { removeEmployee } }) => {
-              const { employees } = cache.readQuery({
+            update={(cache, {data: {removeEmployee}}) => {
+              const {employees} = cache.readQuery({
                 query: queries.GET_EMPLOYEES
               });
               cache.writeQuery({
@@ -79,7 +79,7 @@ class DeleteEmployeeModal extends Component {
               });
             }}
           >
-            {(removeEmployee, { data }) => (
+            {(removeEmployee, {data}) => (
               <div>
                 <p>
                   Are you sure you want to delete{' '}
@@ -88,8 +88,8 @@ class DeleteEmployeeModal extends Component {
                 </p>
 
                 <form
-                  className="form"
-                  id="delete-employee"
+                  className='form'
+                  id='delete-employee'
                   onSubmit={(e) => {
                     e.preventDefault();
                     removeEmployee({
@@ -97,14 +97,14 @@ class DeleteEmployeeModal extends Component {
                         id: this.state.employee.id
                       }
                     });
-                    this.setState({ showDeleteModal: false });
+                    this.setState({showDeleteModal: false});
                     alert('Employee Deleted');
                     this.props.handleClose();
                   }}
                 >
                   <br />
                   <br />
-                  <button className="button add-button" type="submit">
+                  <button className='button add-button' type='submit'>
                     Delete Employee
                   </button>
                 </form>
@@ -114,7 +114,7 @@ class DeleteEmployeeModal extends Component {
           <br />
           <br />
           <button
-            className="button cancel-button"
+            className='button cancel-button'
             onClick={this.handleCloseDeleteModal}
           >
             Cancel

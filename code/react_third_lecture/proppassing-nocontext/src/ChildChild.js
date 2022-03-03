@@ -3,7 +3,7 @@ import './App.css';
 
 function ChildChild(props) {
   return (
-    <div className="App">
+    <div className='App'>
       <p style={props.theme}>I'm the Child's Child</p>
     </div>
   );

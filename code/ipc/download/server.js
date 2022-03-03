@@ -3,16 +3,16 @@ const app = express();
 const redisConnection = require('./redis-connection');
 
 app.get('/compute-results', async (req, res) => {
-  redisConnection.emit('computeResults', { message: 'NOWHERE IS SAFE' });
-  res.json({ done: false, working: true });
+  redisConnection.emit('computeResults', {message: 'NOWHERE IS SAFE'});
+  res.json({done: false, working: true});
 });
 
 app.get('/show-results', async (req, res) => {
   redisConnection.on('results-completed', (data, channel) => {
-    res.json({ data });
+    res.json({data});
   });
 
-  redisConnection.emit('showResults', { message: 'Trust no one' });
+  redisConnection.emit('showResults', {message: 'Trust no one'});
 });
 
 app.listen(3000, () => {

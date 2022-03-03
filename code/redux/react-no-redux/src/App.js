@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import CounterContainer from './CounterContainer';
@@ -12,7 +12,7 @@ function App() {
     setCouter(count);
   };
   return (
-    <div className="App">
+    <div className='App'>
       Foo: {foo}
       <br />
       App Component Count State: {counter}

@@ -99,7 +99,7 @@ const Dropdown = (($) => {
         $(dropdown).on('click', Dropdown._clearMenus);
       }
 
-      let relatedTarget = { relatedTarget: this };
+      let relatedTarget = {relatedTarget: this};
       let showEvent = $.Event(Event.SHOW, relatedTarget);
 
       $(parent).trigger(showEvent);
@@ -162,7 +162,7 @@ const Dropdown = (($) => {
 
       for (let i = 0; i < toggles.length; i++) {
         let parent = Dropdown._getParentFromElement(toggles[i]);
-        let relatedTarget = { relatedTarget: toggles[i] };
+        let relatedTarget = {relatedTarget: toggles[i]};
 
         if (!$(parent).hasClass(ClassName.OPEN)) {
           continue;

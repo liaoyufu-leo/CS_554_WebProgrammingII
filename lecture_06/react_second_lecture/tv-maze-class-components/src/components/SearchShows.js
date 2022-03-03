@@ -6,10 +6,10 @@ const SearchShows = (props) => {
     props.searchValue(value);
   };
   return (
-    <form method="POST " name="formName">
+    <form method='POST ' name='formName'>
       <label>
         Search Term:
-        <input type="text" name="searchTerm" onChange={handleChange} />
+        <input type='text' name='searchTerm' onChange={handleChange} />
       </label>
     </form>
   );

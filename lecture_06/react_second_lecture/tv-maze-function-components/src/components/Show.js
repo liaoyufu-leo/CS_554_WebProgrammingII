@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import { Link, useParams } from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 import noImage from '../img/download.jpeg';
 import {
   makeStyles,
@@ -44,7 +44,7 @@ const Show = (props) => {
   const [showData, setShowData] = useState(undefined);
   const [loading, setLoading] = useState(true);
   const classes = useStyles();
-  let { id } = useParams();
+  let {id} = useParams();
 
   const tConvert = (time) => {
     // Check correct time format and split into components
@@ -70,7 +70,7 @@ const Show = (props) => {
     console.log('useEffect fired');
     async function fetchData() {
       try {
-        const { data: show } = await axios.get(
+        const {data: show} = await axios.get(
           `http://api.tvmaze.com/shows/${id}`
         );
         setShowData(show);
@@ -99,24 +99,24 @@ const Show = (props) => {
     );
   } else {
     return (
-      <Card className={classes.card} variant="outlined">
+      <Card className={classes.card} variant='outlined'>
         <CardHeader className={classes.titleHead} title={showData.name} />
         <CardMedia
           className={classes.media}
-          component="img"
+          component='img'
           image={
             showData.image && showData.image.original
               ? showData.image.original
               : noImage
           }
-          title="show image"
+          title='show image'
         />
 
         <CardContent>
-          <Typography variant="body2" color="textSecondary" component="span">
+          <Typography variant='body2' color='textSecondary' component='span'>
             <dl>
               <p>
-                <dt className="title">Average Rating:</dt>
+                <dt className='title'>Average Rating:</dt>
                 {showData && showData.rating.average ? (
                   <dd>{showData.rating.average}</dd>
                 ) : (
@@ -124,12 +124,12 @@ const Show = (props) => {
                 )}
               </p>
               <p>
-                <dt className="title">Offical Site:</dt>
+                <dt className='title'>Offical Site:</dt>
                 {showData && showData.officialSite ? (
                   <dd>
                     <a
-                      rel="noopener noreferrer"
-                      target="_blank"
+                      rel='noopener noreferrer'
+                      target='_blank'
                       href={showData.officialSite}
                     >
                       {showData.name} Offical Site
@@ -140,7 +140,7 @@ const Show = (props) => {
                 )}
               </p>
               <p>
-                <dt className="title">Network:</dt>
+                <dt className='title'>Network:</dt>
                 {showData && showData.network ? (
                   <dd>{showData.network && showData.network.name}</dd>
                 ) : (
@@ -148,7 +148,7 @@ const Show = (props) => {
                 )}
               </p>
               <p>
-                <dt className="title">Language:</dt>
+                <dt className='title'>Language:</dt>
                 {showData && showData.language ? (
                   <dd>{showData.language}</dd>
                 ) : (
@@ -156,7 +156,7 @@ const Show = (props) => {
                 )}
               </p>
               <p>
-                <dt className="title">Runtime:</dt>
+                <dt className='title'>Runtime:</dt>
                 {showData && showData.runtime ? (
                   <dd>{showData.runtime + ' Min'}</dd>
                 ) : (
@@ -164,7 +164,7 @@ const Show = (props) => {
                 )}
               </p>
               <p>
-                <dt className="title">Premiered:</dt>
+                <dt className='title'>Premiered:</dt>
                 {showData && showData.premiered ? (
                   <dd>{formatDate(showData.premiered)}</dd>
                 ) : (
@@ -172,7 +172,7 @@ const Show = (props) => {
                 )}
               </p>
               <p>
-                <dt className="title">Country:</dt>
+                <dt className='title'>Country:</dt>
                 {showData &&
                 showData.network &&
                 showData.network.country.name ? (
@@ -182,7 +182,7 @@ const Show = (props) => {
                 )}
               </p>
               <p>
-                <dt className="title">Time Zone:</dt>
+                <dt className='title'>Time Zone:</dt>
                 {showData &&
                 showData.network &&
                 showData.network.country.timezone ? (
@@ -192,7 +192,7 @@ const Show = (props) => {
                 )}
               </p>
               <p>
-                <dt className="title">Airtime:</dt>
+                <dt className='title'>Airtime:</dt>
                 {showData && showData.schedule.time ? (
                   <dd>{tConvert(showData.schedule.time)}</dd>
                 ) : (
@@ -200,7 +200,7 @@ const Show = (props) => {
                 )}
               </p>
               <p>
-                <dt className="title">Days Aired:</dt>
+                <dt className='title'>Days Aired:</dt>
                 {showData &&
                 showData.schedule.days &&
                 showData.schedule.days.length >= 1 ? (
@@ -216,7 +216,7 @@ const Show = (props) => {
                 )}
               </p>
               <p>
-                <dt className="title">Status:</dt>
+                <dt className='title'>Status:</dt>
                 {showData && showData.status ? (
                   <dd>{showData.status}</dd>
                 ) : (
@@ -225,7 +225,7 @@ const Show = (props) => {
               </p>
 
               <p>
-                <dt className="title">Genres:</dt>
+                <dt className='title'>Genres:</dt>
                 {showData && showData.genres && showData.genres.length >= 1 ? (
                   <span>
                     {showData.genres.map((genre) => {
@@ -239,11 +239,11 @@ const Show = (props) => {
                 )}
               </p>
               <p>
-                <dt className="title">Summary:</dt>
+                <dt className='title'>Summary:</dt>
                 <dd>{summary}</dd>
               </p>
             </dl>
-            <Link to="/shows">Back to all shows...</Link>
+            <Link to='/shows'>Back to all shows...</Link>
           </Typography>
         </CardContent>
       </Card>

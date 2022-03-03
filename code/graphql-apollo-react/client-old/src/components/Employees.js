@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 //Import Query from react-apollo
-import { Query } from 'react-apollo';
+import {Query} from 'react-apollo';
 
 //Import the Modals for Adding and Updating Employee
 import AddModal from './modals/AddModal';
@@ -50,19 +50,19 @@ class Employees extends Component {
   }
 
   handleOpenAddModal() {
-    this.setState({ showAddModal: true });
+    this.setState({showAddModal: true});
   }
   render() {
     return (
       <div>
-        <button className="button" onClick={this.handleOpenAddModal}>
+        <button className='button' onClick={this.handleOpenAddModal}>
           Create Employee
         </button>
         <br />
         <br />
         <Query query={queries.GET_EMPLOYEES}>
-          {({ data }) => {
-            const { employees } = data;
+          {({data}) => {
+            const {employees} = data;
             if (!employees) {
               return null;
             }
@@ -70,15 +70,15 @@ class Employees extends Component {
               <div>
                 {employees.map((employee) => {
                   return (
-                    <div className="card" key={employee.id}>
-                      <div className="card-body">
-                        <h5 className="card-title">
+                    <div className='card' key={employee.id}>
+                      <div className='card-body'>
+                        <h5 className='card-title'>
                           {employee.firstName} {employee.lastName}
                         </h5>
                         Employer: {employee.employer.name}
                         <br />
                         <button
-                          className="button"
+                          className='button'
                           onClick={() => {
                             this.handleOpenEditModal(employee);
                           }}
@@ -86,7 +86,7 @@ class Employees extends Component {
                           Edit
                         </button>
                         <button
-                          className="button"
+                          className='button'
                           onClick={() => {
                             this.handleOpenDeleteModal(employee);
                           }}
@@ -117,7 +117,7 @@ class Employees extends Component {
           <AddModal
             isOpen={this.state.showAddModal}
             handleClose={this.handleCloseModals}
-            modal="addEmployee"
+            modal='addEmployee'
           />
         )}
 

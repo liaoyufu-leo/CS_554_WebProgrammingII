@@ -1,4 +1,4 @@
-import { v4 as uuid } from 'uuid';
+import {v4 as uuid} from 'uuid';
 const initialUserState = [
   {
     id: uuid(),
@@ -10,14 +10,11 @@ let copyState = null;
 let index = 0;
 
 const reducer = (state, action) => {
-  const { type, payload } = action;
+  const {type, payload} = action;
   switch (type) {
     case 'CREATE_USER':
       console.log('payload', payload);
-      return [
-        ...state,
-        { id: uuid(), name: payload.name, email: payload.email }
-      ];
+      return [...state, {id: uuid(), name: payload.name, email: payload.email}];
     case 'DELETE_USER':
       copyState = [...state];
       index = copyState.findIndex((x) => x.id === payload.id);

@@ -8,7 +8,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/hello', async (req, res) => {
-  res.json({ hello: 'World' });
+  res.json({hello: 'World'});
 });
 
 /* What this code is doing is attaching listeners to any event we want to on any incoming socket that successfully connected. 

@@ -36,7 +36,7 @@ const Search = ({route}) => {
       <Button
         style={{borderRadius: 15, marginTop: 10}}
         onPress={() => handleSearch()}
-        title="Search"></Button>
+        title='Search'></Button>
       {loading == false && shows && shows.length == 0 ? (
         <Text style={StyleSheet.compose(styles.title, {marginTop: 50})}>
           {' '}

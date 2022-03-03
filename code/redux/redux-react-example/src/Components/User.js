@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import {useDispatch} from 'react-redux';
 import actions from '../actions';
 
 function User(props) {
@@ -9,7 +9,7 @@ function User(props) {
   };
 
   return (
-    <div className="todo-wrapper">
+    <div className='todo-wrapper'>
       <table>
         <tbody>
           <tr>

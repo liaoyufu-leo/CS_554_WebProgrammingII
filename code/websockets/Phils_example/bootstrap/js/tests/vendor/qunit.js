@@ -338,7 +338,7 @@
               function () {
                 QUnit.pushFailure(error, filePath + ':' + linerNr);
               },
-              { validTest: true }
+              {validTest: true}
             )
           );
         }
@@ -485,8 +485,8 @@
       extend(
         config,
         {
-          stats: { all: 0, bad: 0 },
-          moduleStats: { all: 0, bad: 0 },
+          stats: {all: 0, bad: 0},
+          moduleStats: {all: 0, bad: 0},
           started: 0,
           updateRate: 1000,
           autostart: true,
@@ -700,7 +700,7 @@
           });
         }
         config.previousModule = this.module;
-        config.moduleStats = { all: 0, bad: 0, started: now() };
+        config.moduleStats = {all: 0, bad: 0, started: now()};
         runLoggingCallbacks('moduleStart', {
           name: this.module.name,
           tests: this.module.tests
@@ -3194,7 +3194,7 @@
 
     rerunTrigger = document.createElement('a');
     rerunTrigger.innerHTML = 'Rerun';
-    rerunTrigger.href = setUrl({ testId: testId });
+    rerunTrigger.href = setUrl({testId: testId});
 
     testBlock = document.createElement('li');
     testBlock.appendChild(title);
@@ -3400,7 +3400,7 @@
           QUnit.config.maxDepth +
           ').<p>Hint: Use <code>QUnit.dump.maxDepth</code> to ' +
           " run with a higher max depth or <a href='" +
-          escapeText(setUrl({ maxDepth: -1 })) +
+          escapeText(setUrl({maxDepth: -1})) +
           "'>" +
           'Rerun</a> without max depth.</p></td></tr>';
       } else {

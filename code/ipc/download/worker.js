@@ -12,7 +12,7 @@ redisConnection.on('showResults', (data, channel) => {
       setTimeout(sendResults, 5000);
     } else {
       console.log(computedResults);
-      redisConnection.emit('results-completed', { results: computedResults });
+      redisConnection.emit('results-completed', {results: computedResults});
     }
   };
 
@@ -37,7 +37,7 @@ redisConnection.on('computeResults', async (data, channel) => {
   });
 
   gistResults.forEach((result) => {
-    const { first_name } = result;
+    const {first_name} = result;
     const lowerFirstName = first_name.toLowerCase();
     const firstLetter = lowerFirstName[0];
     countOfLettersStartingName[firstLetter]++;

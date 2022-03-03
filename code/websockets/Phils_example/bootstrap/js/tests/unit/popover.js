@@ -136,7 +136,7 @@ $(function () {
       var content = $('<i>¯\\_(ツ)_/¯</i>').get(0);
       var $popover = $('<a href="#" rel="tooltip"/>')
         .appendTo('#qunit-fixture')
-        .bootstrapPopover({ html: true, title: title, content: content });
+        .bootstrapPopover({html: true, title: title, content: content});
 
       $popover.bootstrapPopover('show');
 
@@ -171,7 +171,7 @@ $(function () {
       var content = $('<i>¯\\_(ツ)_/¯</i>').get(0);
       var $popover = $('<a href="#" rel="tooltip"/>')
         .appendTo('#qunit-fixture')
-        .bootstrapPopover({ title: title, content: content });
+        .bootstrapPopover({title: title, content: content});
 
       $popover.bootstrapPopover('show');
 

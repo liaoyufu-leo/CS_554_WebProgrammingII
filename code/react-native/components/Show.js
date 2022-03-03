@@ -18,7 +18,7 @@ const Show = ({route}) => {
           <View>
             <Image
               source={imgPlaceholder}
-              resizeMethod="scale"
+              resizeMethod='scale'
               style={{width: '100%', height: windowHeight * 0.7}}
             />
 

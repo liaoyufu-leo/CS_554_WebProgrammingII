@@ -4,7 +4,7 @@ import Users from './Components/Users';
 import All from './Components/All';
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <div>
         <h1> Todo Tracker</h1>
         <Todos />

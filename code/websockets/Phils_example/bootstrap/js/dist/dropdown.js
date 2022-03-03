@@ -118,7 +118,7 @@ var Dropdown = (function ($) {
         $(dropdown).on('click', Dropdown._clearMenus);
       }
 
-      var relatedTarget = { relatedTarget: this };
+      var relatedTarget = {relatedTarget: this};
       var showEvent = $.Event(Event.SHOW, relatedTarget);
 
       $(parent).trigger(showEvent);
@@ -181,7 +181,7 @@ var Dropdown = (function ($) {
 
       for (var i = 0; i < toggles.length; i++) {
         var parent = Dropdown._getParentFromElement(toggles[i]);
-        var relatedTarget = { relatedTarget: toggles[i] };
+        var relatedTarget = {relatedTarget: toggles[i]};
 
         if (!$(parent).hasClass(ClassName.OPEN)) {
           continue;

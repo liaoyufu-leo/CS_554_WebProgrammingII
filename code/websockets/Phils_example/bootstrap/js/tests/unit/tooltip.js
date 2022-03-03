@@ -150,7 +150,7 @@ $(function () {
       assert.expect(2);
       var $tooltip = $('<a href="#" rel="tooltip" title="Another tooltip"/>')
         .appendTo('#qunit-fixture')
-        .bootstrapTooltip({ placement: 'bottom' });
+        .bootstrapTooltip({placement: 'bottom'});
 
       $tooltip.bootstrapTooltip('show');
 
@@ -177,7 +177,7 @@ $(function () {
       '<a href="#" rel="tooltip" title="&lt;b&gt;@fat&lt;/b&gt;"/>'
     )
       .appendTo('#qunit-fixture')
-      .bootstrapTooltip({ html: true });
+      .bootstrapTooltip({html: true});
 
     $tooltip.bootstrapTooltip('show');
     assert.notEqual($('.tooltip b').length, 0, 'b tag was inserted');
@@ -195,7 +195,7 @@ $(function () {
     var title = document.createTextNode('<3 writing tests');
     var $tooltip = $('<a href="#" rel="tooltip"/>')
       .appendTo('#qunit-fixture')
-      .bootstrapTooltip({ title: title });
+      .bootstrapTooltip({title: title});
 
     $tooltip.bootstrapTooltip('show');
 
@@ -216,7 +216,7 @@ $(function () {
     var title = document.createTextNode('<3 writing tests');
     var $tooltip = $('<a href="#" rel="tooltip"/>')
       .appendTo('#qunit-fixture')
-      .bootstrapTooltip({ html: true, title: title });
+      .bootstrapTooltip({html: true, title: title});
 
     $tooltip.bootstrapTooltip('show');
 
@@ -423,7 +423,7 @@ $(function () {
     assert.expect(1);
     $('<a href="#" rel="tooltip" title="tooltip on toggle"/>')
       .appendTo('#qunit-fixture')
-      .bootstrapTooltip({ trigger: 'manual' })
+      .bootstrapTooltip({trigger: 'manual'})
       .bootstrapTooltip('toggle');
 
     assert.ok($('.tooltip').is('.fade.in'), 'tooltip is faded in');
@@ -435,7 +435,7 @@ $(function () {
       assert.expect(1);
       $('<a href="#" rel="tooltip" title="tooltip on toggle">@ResentedHook</a>')
         .appendTo('#qunit-fixture')
-        .bootstrapTooltip({ trigger: 'manual' })
+        .bootstrapTooltip({trigger: 'manual'})
         .bootstrapTooltip('show');
 
       $('.tooltip').bootstrapTooltip('toggle');
@@ -449,7 +449,7 @@ $(function () {
       assert.expect(3);
       var $tooltip = $('<a href="#" rel="tooltip" title="Another tooltip"/>')
         .appendTo('#qunit-fixture')
-        .bootstrapTooltip({ container: 'body' })
+        .bootstrapTooltip({container: 'body'})
         .bootstrapTooltip('show');
 
       assert.notEqual(
@@ -579,7 +579,7 @@ $(function () {
         .one('show.bs.tooltip', function () {
           $(this).remove();
         })
-        .bootstrapTooltip({ placement: 'top' });
+        .bootstrapTooltip({placement: 'top'});
 
       try {
         $tooltip.bootstrapTooltip('show');
@@ -645,7 +645,7 @@ $(function () {
 
       var $tooltip = $('<a href="#" rel="tooltip" title="Another tooltip"/>')
         .appendTo('#qunit-fixture')
-        .bootstrapTooltip({ delay: 150 });
+        .bootstrapTooltip({delay: 150});
 
       setTimeout(function () {
         assert.ok(
@@ -671,7 +671,7 @@ $(function () {
 
       var $tooltip = $('<a href="#" rel="tooltip" title="Another tooltip"/>')
         .appendTo('#qunit-fixture')
-        .bootstrapTooltip({ delay: 150 });
+        .bootstrapTooltip({delay: 150});
 
       setTimeout(function () {
         assert.ok(!$('.tooltip').is('.fade.in'), '100ms: tooltip not faded in');
@@ -695,7 +695,7 @@ $(function () {
 
       var $tooltip = $('<a href="#" rel="tooltip" title="Another tooltip"/>')
         .appendTo('#qunit-fixture')
-        .bootstrapTooltip({ delay: { show: 0, hide: 150 } });
+        .bootstrapTooltip({delay: {show: 0, hide: 150}});
 
       setTimeout(function () {
         assert.ok($('.tooltip').is('.fade.in'), '1ms: tooltip faded in');
@@ -730,7 +730,7 @@ $(function () {
 
       var $tooltip = $('<a href="#" rel="tooltip" title="Another tooltip"/>')
         .appendTo('#qunit-fixture')
-        .bootstrapTooltip({ delay: 150 });
+        .bootstrapTooltip({delay: 150});
 
       setTimeout(function () {
         assert.ok(!$('.tooltip').is('.fade.in'), '100ms: tooltip not faded in');
@@ -754,7 +754,7 @@ $(function () {
 
       var $tooltip = $('<a href="#" rel="tooltip" title="Another tooltip"/>')
         .appendTo('#qunit-fixture')
-        .bootstrapTooltip({ delay: { show: 150, hide: 0 } });
+        .bootstrapTooltip({delay: {show: 150, hide: 0}});
 
       setTimeout(function () {
         assert.ok(!$('.tooltip').is('.fade.in'), '100ms: tooltip not faded in');
@@ -776,7 +776,7 @@ $(function () {
 
     var $tooltip = $('<a href="#" rel="tooltip" title="Another tooltip"/>')
       .appendTo('#qunit-fixture')
-      .bootstrapTooltip({ delay: { show: 0, hide: 150 } });
+      .bootstrapTooltip({delay: {show: 0, hide: 150}});
 
     setTimeout(function () {
       assert.ok(
@@ -850,7 +850,7 @@ $(function () {
           );
           done();
         })
-        .bootstrapTooltip({ placement: 'top', trigger: 'manual' });
+        .bootstrapTooltip({placement: 'top', trigger: 'manual'});
 
       $circle.bootstrapTooltip('show');
     }
@@ -881,7 +881,7 @@ $(function () {
         html: true,
         animation: false,
         trigger: 'hover',
-        delay: { show: 0, hide: 500 },
+        delay: {show: 0, hide: 500},
         container: $tooltip,
         title: titleHtml
       });
@@ -921,7 +921,7 @@ $(function () {
         html: true,
         animation: false,
         trigger: 'hover',
-        delay: { show: 0, hide: 500 },
+        delay: {show: 0, hide: 500},
         title: titleHtml
       });
 
@@ -1029,7 +1029,7 @@ $(function () {
       assert.expect(41);
       var $el = $('<button>Trigger</button>')
         .appendTo('#qunit-fixture')
-        .bootstrapTooltip({ trigger: 'click hover focus', animation: false });
+        .bootstrapTooltip({trigger: 'click hover focus', animation: false});
       var tooltip = $el.data('bs.tooltip');
       var $tooltip = $(tooltip.getTipElement());
 

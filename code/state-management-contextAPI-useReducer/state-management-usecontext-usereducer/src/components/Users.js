@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import {useState, useContext} from 'react';
 import AppContext from '../context/context';
 import AddUser from './AddUser';
 import User from './User';
@@ -7,7 +7,7 @@ function Users() {
   const context = useContext(AppContext);
   console.log(context.users);
   return (
-    <div className="todo-wrapper">
+    <div className='todo-wrapper'>
       <button onClick={() => setBtnToggle(!addBtnToggle)}>Add A User</button>
       <br />
       <br />

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import '../App.css';
 import ReactModal from 'react-modal';
-import { useQuery, useMutation } from '@apollo/client';
+import {useQuery, useMutation} from '@apollo/client';
 //Import the file where my query constants are defined
 import queries from '../../queries';
 
@@ -24,7 +24,7 @@ const customStyles = {
 function EditEmployeeModal(props) {
   const [showEditModal, setShowEditModal] = useState(props.isOpen);
   const [employee, setEmployee] = useState(props.employee);
-  const { loading, error, data } = useQuery(queries.GET_EMPLOYERS);
+  const {loading, error, data} = useQuery(queries.GET_EMPLOYERS);
   const [editEmployee] = useMutation(queries.EDIT_EMPLOYEE);
   const handleCloseEditModal = () => {
     setShowEditModal(false);
@@ -37,7 +37,7 @@ function EditEmployeeModal(props) {
   let lastName;
   let employerId;
   if (data) {
-    var { employers } = data;
+    var {employers} = data;
   }
   if (loading) {
     return <div>loading...</div>;
@@ -49,14 +49,14 @@ function EditEmployeeModal(props) {
     <div>
       {/*Edit Employee Modal - NOT DONE YET */}
       <ReactModal
-        name="editModal"
+        name='editModal'
         isOpen={showEditModal}
-        contentLabel="Edit Employee"
+        contentLabel='Edit Employee'
         style={customStyles}
       >
         <form
-          className="form"
-          id="add-employee"
+          className='form'
+          id='add-employee'
           onSubmit={(e) => {
             console.log(firstName.value);
             console.log(lastName.value);
@@ -79,7 +79,7 @@ function EditEmployeeModal(props) {
             props.handleClose();
           }}
         >
-          <div className="form-group">
+          <div className='form-group'>
             <label>
               First Name:
               <br />
@@ -93,7 +93,7 @@ function EditEmployeeModal(props) {
             </label>
           </div>
           <br />
-          <div className="form-group">
+          <div className='form-group'>
             <label>
               Last Name:
               <br />
@@ -107,12 +107,12 @@ function EditEmployeeModal(props) {
           </div>
           <br />
 
-          <div className="form-group">
+          <div className='form-group'>
             <label>
               Employer:
               <select
                 defaultValue={employee.employer._id}
-                className="form-control"
+                className='form-control'
                 ref={(node) => {
                   employerId = node;
                 }}
@@ -130,12 +130,12 @@ function EditEmployeeModal(props) {
           </div>
           <br />
           <br />
-          <button className="button add-button" type="submit">
+          <button className='button add-button' type='submit'>
             Update Employee
           </button>
         </form>
 
-        <button className="button cancel-button" onClick={handleCloseEditModal}>
+        <button className='button cancel-button' onClick={handleCloseEditModal}>
           Cancel
         </button>
       </ReactModal>

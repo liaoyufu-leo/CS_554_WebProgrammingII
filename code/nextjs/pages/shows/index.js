@@ -1,7 +1,7 @@
 import Layout from '../../components/MyLayout';
 import axios from 'axios';
 import Link from 'next/link';
-export default function shows({ data }) {
+export default function shows({data}) {
   return (
     <Layout>
       <h1>Shows (getStaticProps)</h1>
@@ -34,13 +34,13 @@ export default function shows({ data }) {
 }
 
 async function getShowData() {
-  const { data } = await axios.get('http://api.tvmaze.com/shows');
+  const {data} = await axios.get('http://api.tvmaze.com/shows');
   return data;
 }
 export async function getStaticProps() {
   const data = await getShowData();
   return {
-    props: { data },
+    props: {data},
     revalidate: 86400
   };
 }

@@ -8,17 +8,17 @@ const addTodo = (task, taskDesc) => ({
 
 const deleteTodo = (id) => ({
   type: 'DELETE_TODO',
-  payload: { id: id }
+  payload: {id: id}
 });
 
 const completeTodo = (id) => ({
   type: 'COMPLETE_TODO',
-  payload: { id: id }
+  payload: {id: id}
 });
 
 const uncompleteTodo = (id) => ({
   type: 'UNCOMPLETE_TODO',
-  payload: { id: id }
+  payload: {id: id}
 });
 
 const addUser = (name, email) => ({
@@ -31,7 +31,7 @@ const addUser = (name, email) => ({
 
 const deleteUser = (id) => ({
   type: 'DELETE_USER',
-  payload: { id: id }
+  payload: {id: id}
 });
 
 module.exports = {

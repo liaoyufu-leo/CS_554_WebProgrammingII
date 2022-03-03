@@ -29,7 +29,7 @@ const Navigation = () => {
 
   return (
     <Nav.Navigator
-      initialRouteName="Home"
+      initialRouteName='Home'
       NavBarOptions={{
         labelStyle: {fontSize: 15},
         NavStyle: {alignContent: 'center'}
@@ -38,13 +38,13 @@ const Navigation = () => {
       shifting={true}
       barStyle={{backgroundColor: 'ghostwhite'}}>
       <Nav.Screen
-        name="Home"
+        name='Home'
         component={Home}
         style={{fontSize: 14}}
         options={{title: 'Home'}}
       />
-      <Nav.Screen name="Search" component={Search} />
-      <Nav.Screen name="Show" component={Show} />
+      <Nav.Screen name='Search' component={Search} />
+      <Nav.Screen name='Show' component={Show} />
     </Nav.Navigator>
   );
 };

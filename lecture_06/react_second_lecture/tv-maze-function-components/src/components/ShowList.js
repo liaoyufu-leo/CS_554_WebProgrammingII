@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import SearchShows from './SearchShows';
 import noImage from '../img/download.jpeg';
 import {
@@ -55,7 +55,7 @@ const ShowList = () => {
     console.log('on load useeffect');
     async function fetchData() {
       try {
-        const { data } = await axios.get('http://api.tvmaze.com/shows');
+        const {data} = await axios.get('http://api.tvmaze.com/shows');
         setShowsData(data);
         setLoading(false);
       } catch (e) {
@@ -70,7 +70,7 @@ const ShowList = () => {
     async function fetchData() {
       try {
         console.log(`in fetch searchTerm: ${searchTerm}`);
-        const { data } = await axios.get(
+        const {data} = await axios.get(
           'http://api.tvmaze.com/search/shows?q=' + searchTerm
         );
         setSearchData(data);
@@ -91,30 +91,30 @@ const ShowList = () => {
   const buildCard = (show) => {
     return (
       <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={show.id}>
-        <Card className={classes.card} variant="outlined">
+        <Card className={classes.card} variant='outlined'>
           <CardActionArea>
             <Link to={`/shows/${show.id}`}>
               <CardMedia
                 className={classes.media}
-                component="img"
+                component='img'
                 image={
                   show.image && show.image.original
                     ? show.image.original
                     : noImage
                 }
-                title="show image"
+                title='show image'
               />
 
               <CardContent>
                 <Typography
                   className={classes.titleHead}
                   gutterBottom
-                  variant="h6"
-                  component="h3"
+                  variant='h6'
+                  component='h3'
                 >
                   {show.name}
                 </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
+                <Typography variant='body2' color='textSecondary' component='p'>
                   {show.summary
                     ? show.summary.replace(regex, '').substring(0, 139) + '...'
                     : 'No Summary'}
@@ -132,7 +132,7 @@ const ShowList = () => {
     card =
       searchData &&
       searchData.map((shows) => {
-        let { show } = shows;
+        let {show} = shows;
         return buildCard(show);
       });
   } else {

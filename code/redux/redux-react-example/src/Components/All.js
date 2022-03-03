@@ -1,4 +1,4 @@
-import { useSelector, useDispatch } from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import actions from '../actions';
 
 const All = () => {
@@ -6,7 +6,7 @@ const All = () => {
   const allState = useSelector((state) => state);
 
   return (
-    <div className="todos-wrapper">
+    <div className='todos-wrapper'>
       <h2>All State</h2>
       <h3>Todos</h3>
       <ul>

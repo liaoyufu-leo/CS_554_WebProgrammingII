@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useReducer } from 'react';
+import React, {useReducer} from 'react';
 import Todos from './components/Todos';
 import Users from './components/Users';
 import All from './components/All';
@@ -17,8 +17,8 @@ function App() {
     reducers.users.initialUserState
   );
   return (
-    <AppContext.Provider value={{ todos, todoDispatch, users, userDispatch }}>
-      <div className="App">
+    <AppContext.Provider value={{todos, todoDispatch, users, userDispatch}}>
+      <div className='App'>
         <div>
           <h1> Todo Tracker</h1>
 

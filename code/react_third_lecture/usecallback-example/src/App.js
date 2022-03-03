@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, {useState, useCallback} from 'react';
 import './App.css';
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
   }, [setLastName]);
 
   return (
-    <div className="App">
+    <div className='App'>
       <div>
         {username}
         <br />

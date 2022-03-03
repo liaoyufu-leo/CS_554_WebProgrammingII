@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Clock from './Clock';
@@ -11,7 +11,7 @@ class App extends Component {
   }
 
   updateCounter = (counter) => {
-    this.setState({ counter: counter });
+    this.setState({counter: counter});
   };
 
   render() {

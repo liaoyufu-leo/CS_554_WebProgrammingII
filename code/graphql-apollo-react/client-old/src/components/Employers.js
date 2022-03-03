@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 //Import Query from react-apollo
-import { Query } from 'react-apollo';
+import {Query} from 'react-apollo';
 
 //Import the Modals for Adding and Updating Employee
 import AddModal from './modals/AddModal';
@@ -24,17 +24,17 @@ class Employers extends Component {
   }
 
   handleCloseModals() {
-    this.setState({ showAddModal: false });
+    this.setState({showAddModal: false});
   }
 
   handleOpenAddModal() {
-    this.setState({ showAddModal: true });
+    this.setState({showAddModal: true});
   }
 
   render() {
     return (
       <div>
-        <button className="button" onClick={this.handleOpenAddModal}>
+        <button className='button' onClick={this.handleOpenAddModal}>
           Create Employer
         </button>
         <br />
@@ -43,8 +43,8 @@ class Employers extends Component {
           query={queries.GET_EMPLOYERS_WITH_EMPLOYEES}
           fetchPolicy={'cache-and-network'}
         >
-          {({ data }) => {
-            const { employers } = data;
+          {({data}) => {
+            const {employers} = data;
             if (!employers) {
               return null;
             }
@@ -52,9 +52,9 @@ class Employers extends Component {
               <div>
                 {employers.map((employer) => {
                   return (
-                    <div className="card" key={employer.id}>
-                      <div className="card-body">
-                        <h5 className="card-title">{employer.name}</h5>
+                    <div className='card' key={employer.id}>
+                      <div className='card-body'>
+                        <h5 className='card-title'>{employer.name}</h5>
                         <span>Number of Employees:</span>{' '}
                         {employer.numOfEmployees}
                         <br />
@@ -84,7 +84,7 @@ class Employers extends Component {
           <AddModal
             isOpen={this.state.showAddModal}
             handleClose={this.handleCloseModals}
-            modal="addEmployer"
+            modal='addEmployer'
           />
         )}
       </div>

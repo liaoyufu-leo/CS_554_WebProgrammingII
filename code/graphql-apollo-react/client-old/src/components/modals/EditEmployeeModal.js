@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 //Import Query from react-apollo
-import { Query, Mutation } from 'react-apollo';
+import {Query, Mutation} from 'react-apollo';
 import ReactModal from 'react-modal';
 
 //Import the file where my query constants are defined
@@ -38,7 +38,7 @@ class EditEmployeesModal extends Component {
   }
 
   handleCloseEditModal() {
-    this.setState({ showEditModal: false, employee: null });
+    this.setState({showEditModal: false, employee: null});
     this.props.handleClose();
   }
 
@@ -50,16 +50,16 @@ class EditEmployeesModal extends Component {
       <div>
         {/*Edit Employee Modal - NOT DONE YET */}
         <ReactModal
-          name="editModal"
+          name='editModal'
           isOpen={this.state.showEditModal}
-          contentLabel="Edit Employee"
+          contentLabel='Edit Employee'
           style={customStyles}
         >
           <Mutation mutation={queries.EDIT_EMPLOYEE}>
-            {(editEmployee, { data }) => (
+            {(editEmployee, {data}) => (
               <form
-                className="form"
-                id="add-employee"
+                className='form'
+                id='add-employee'
                 onSubmit={(e) => {
                   console.log(firstName.value);
                   console.log(lastName.value);
@@ -76,12 +76,12 @@ class EditEmployeesModal extends Component {
                   firstName.value = '';
                   lastName.value = '';
                   employerId.value = '1';
-                  this.setState({ showEditModal: false });
+                  this.setState({showEditModal: false});
                   alert('Employee Updated');
                   this.props.handleClose();
                 }}
               >
-                <div className="form-group">
+                <div className='form-group'>
                   <label>
                     First Name:
                     <br />
@@ -95,7 +95,7 @@ class EditEmployeesModal extends Component {
                   </label>
                 </div>
                 <br />
-                <div className="form-group">
+                <div className='form-group'>
                   <label>
                     Last Name:
                     <br />
@@ -110,18 +110,18 @@ class EditEmployeesModal extends Component {
                 <br />
 
                 <Query query={queries.GET_EMPLOYERS}>
-                  {({ data }) => {
-                    const { employers } = data;
+                  {({data}) => {
+                    const {employers} = data;
                     if (!employers) {
                       return null;
                     }
                     return (
-                      <div className="form-group">
+                      <div className='form-group'>
                         <label>
                           Employer:
                           <select
                             defaultValue={this.props.employee.employer.id}
-                            className="form-control"
+                            className='form-control'
                             ref={(node) => {
                               employerId = node;
                             }}
@@ -141,14 +141,14 @@ class EditEmployeesModal extends Component {
                 </Query>
                 <br />
                 <br />
-                <button className="button add-button" type="submit">
+                <button className='button add-button' type='submit'>
                   Update Employee
                 </button>
               </form>
             )}
           </Mutation>
           <button
-            className="button cancel-button"
+            className='button cancel-button'
             onClick={this.handleCloseEditModal}
           >
             Cancel

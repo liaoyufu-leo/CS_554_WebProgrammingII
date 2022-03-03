@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import '../App.css';
-import { useMutation } from '@apollo/client';
+import {useMutation} from '@apollo/client';
 import ReactModal from 'react-modal';
 
 //Import the file where my query constants are defined
@@ -27,8 +27,8 @@ function DeleteEmployeeModal(props) {
   const [employee, setEmployee] = useState(props.deleteEmployee);
 
   const [removeEmployee] = useMutation(queries.DELETE_EMPLOYEE, {
-    update(cache, { data: { removeEmployee } }) {
-      const { employees } = cache.readQuery({
+    update(cache, {data: {removeEmployee}}) {
+      const {employees} = cache.readQuery({
         query: queries.GET_EMPLOYEES
       });
       cache.writeQuery({
@@ -50,9 +50,9 @@ function DeleteEmployeeModal(props) {
     <div>
       {/*Delete Employee Modal */}
       <ReactModal
-        name="deleteModal"
+        name='deleteModal'
         isOpen={showDeleteModal}
-        contentLabel="Delete Employee"
+        contentLabel='Delete Employee'
         style={customStyles}
       >
         {/*Here we set up the mutation, since I want the data on the page to update
@@ -69,8 +69,8 @@ function DeleteEmployeeModal(props) {
           </p>
 
           <form
-            className="form"
-            id="delete-employee"
+            className='form'
+            id='delete-employee'
             onSubmit={(e) => {
               e.preventDefault();
               removeEmployee({
@@ -86,7 +86,7 @@ function DeleteEmployeeModal(props) {
           >
             <br />
             <br />
-            <button className="button add-button" type="submit">
+            <button className='button add-button' type='submit'>
               Delete Employee
             </button>
           </form>
@@ -95,7 +95,7 @@ function DeleteEmployeeModal(props) {
         <br />
         <br />
         <button
-          className="button cancel-button"
+          className='button cancel-button'
           onClick={handleCloseDeleteModal}
         >
           Cancel

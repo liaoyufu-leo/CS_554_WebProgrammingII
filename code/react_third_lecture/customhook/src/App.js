@@ -3,9 +3,9 @@ import './App.css';
 import useAxios from './useAxios';
 
 function App() {
-  let { data, loading } = useAxios('http://api.tvmaze.com/shows');
+  let {data, loading} = useAxios('http://api.tvmaze.com/shows');
   return (
-    <div className="App">
+    <div className='App'>
       <div>
         {loading
           ? 'Loading...'

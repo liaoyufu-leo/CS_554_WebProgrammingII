@@ -66,11 +66,9 @@ const main = async () => {
       1: 'making low carb recipes',
       sport: 'Baseball'
     },
-    age: 44
+    age: 46
   };
-
-  let jsonString = JSON.stringify(bio);
-  //console.log(jsonString);
+  //let hmSetAsyncBio = await client.hmsetAsync('bioFAIL', bio);
   //let hmSetAsyncBioJson = await client.hmsetAsync('bio', jsonString);
   let flatBio = flat(bio);
   console.log(flatBio);

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 const App = (props) => {
   const [count, setCount] = useState(0);
@@ -7,7 +7,7 @@ const App = (props) => {
   return (
     <div>
       <p>
-        The current {text || 'count'} is: {count}
+        The current text is {text}. The current count is: {count}
       </p>
       <button onClick={() => setCount(count + 1)}>Increment</button>
       <button onClick={() => (count <= 0 ? setCount(0) : setCount(count - 1))}>

@@ -10,9 +10,9 @@ function App() {
     console.log('Hello from within handle_func in app.js');
   };
   return (
-    <div className="App">
+    <div className='App'>
       <PropsExample
-        user={{ name: 'Patrick Hill', username: 'graffixnyc' }}
+        user={{name: 'Patrick Hill', username: 'graffixnyc'}}
         handleClick={handle_func}
         greeting={greeting}
       />

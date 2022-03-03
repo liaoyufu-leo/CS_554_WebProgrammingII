@@ -27,14 +27,14 @@ const Navigation = () => {
 
   return (
     <Nav.Navigator
-      initialRouteName="Home"
+      initialRouteName='Home'
       NavBarOptions={{
         labelStyle: {fontSize: 15},
         NavStyle: {alignContent: 'center'}
       }}>
-      <Nav.Screen name="Home" component={Home} style={{fontSize: 14}} />
-      <Nav.Screen name="Search" component={Search} />
-      <Nav.Screen name="Show" component={Show} />
+      <Nav.Screen name='Home' component={Home} style={{fontSize: 14}} />
+      <Nav.Screen name='Search' component={Search} />
+      <Nav.Screen name='Show' component={Show} />
     </Nav.Navigator>
   );
 };

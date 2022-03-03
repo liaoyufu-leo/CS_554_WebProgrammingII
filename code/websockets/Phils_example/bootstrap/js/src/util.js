@@ -57,7 +57,7 @@ const Util = (($) => {
 
     for (let name in TransitionEndEvent) {
       if (el.style[name] !== undefined) {
-        return { end: TransitionEndEvent[name] };
+        return {end: TransitionEndEvent[name]};
       }
     }
 

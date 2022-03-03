@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 //Import Query from react-apollo
-import { Query, Mutation } from 'react-apollo';
+import {Query, Mutation} from 'react-apollo';
 import ReactModal from 'react-modal';
 
 //Import the file where my query constants are defined
@@ -37,11 +37,11 @@ class AddModal extends Component {
   }
 
   handleOpenAddModal() {
-    this.setState({ showAddModal: true });
+    this.setState({showAddModal: true});
   }
 
   handleCloseAddModal() {
-    this.setState({ showAddModal: false });
+    this.setState({showAddModal: false});
     this.props.handleClose(false);
   }
   render() {
@@ -55,20 +55,20 @@ class AddModal extends Component {
       body = (
         <Mutation
           mutation={queries.ADD_EMPLOYEE}
-          update={(cache, { data: { addEmployee } }) => {
-            const { employees } = cache.readQuery({
+          update={(cache, {data: {addEmployee}}) => {
+            const {employees} = cache.readQuery({
               query: queries.GET_EMPLOYEES
             });
             cache.writeQuery({
               query: queries.GET_EMPLOYEES,
-              data: { employees: employees.concat([addEmployee]) }
+              data: {employees: employees.concat([addEmployee])}
             });
           }}
         >
-          {(addEmployee, { data }) => (
+          {(addEmployee, {data}) => (
             <form
-              className="form"
-              id="add-employee"
+              className='form'
+              id='add-employee'
               onSubmit={(e) => {
                 e.preventDefault();
                 addEmployee({
@@ -81,12 +81,12 @@ class AddModal extends Component {
                 firstName.value = '';
                 lastName.value = '';
                 employerId.value = '1';
-                this.setState({ showAddModal: false });
+                this.setState({showAddModal: false});
                 alert('Employee Added');
                 this.props.handleClose();
               }}
             >
-              <div className="form-group">
+              <div className='form-group'>
                 <label>
                   First Name:
                   <br />
@@ -100,7 +100,7 @@ class AddModal extends Component {
                 </label>
               </div>
               <br />
-              <div className="form-group">
+              <div className='form-group'>
                 <label>
                   Last Name:
                   <br />
@@ -115,17 +115,17 @@ class AddModal extends Component {
               <br />
 
               <Query query={queries.GET_EMPLOYERS}>
-                {({ data }) => {
-                  const { employers } = data;
+                {({data}) => {
+                  const {employers} = data;
                   if (!employers) {
                     return null;
                   }
                   return (
-                    <div className="form-group">
+                    <div className='form-group'>
                       <label>
                         Employer:
                         <select
-                          className="form-control"
+                          className='form-control'
                           ref={(node) => {
                             employerId = node;
                           }}
@@ -145,7 +145,7 @@ class AddModal extends Component {
               </Query>
               <br />
               <br />
-              <button className="button add-button" type="submit">
+              <button className='button add-button' type='submit'>
                 Add Employee
               </button>
             </form>
@@ -158,20 +158,20 @@ class AddModal extends Component {
       body = (
         <Mutation
           mutation={queries.ADD_EMPLOYER}
-          update={(cache, { data: { addEmployer } }) => {
-            const { employers } = cache.readQuery({
+          update={(cache, {data: {addEmployer}}) => {
+            const {employers} = cache.readQuery({
               query: queries.GET_EMPLOYERS_WITH_EMPLOYEES
             });
             cache.writeQuery({
               query: queries.GET_EMPLOYERS_WITH_EMPLOYEES,
-              data: { employers: employers.concat([addEmployer]) }
+              data: {employers: employers.concat([addEmployer])}
             });
           }}
         >
-          {(addEmployer, { data }) => (
+          {(addEmployer, {data}) => (
             <form
-              className="form"
-              id="add-employer"
+              className='form'
+              id='add-employer'
               onSubmit={(e) => {
                 e.preventDefault();
                 addEmployer({
@@ -180,12 +180,12 @@ class AddModal extends Component {
                   }
                 });
                 name.value = '';
-                this.setState({ showAddModal: false });
+                this.setState({showAddModal: false});
                 alert('Employer Added');
                 this.props.handleClose();
               }}
             >
-              <div className="form-group">
+              <div className='form-group'>
                 <label>
                   Employer Name:
                   <br />
@@ -202,7 +202,7 @@ class AddModal extends Component {
 
               <br />
               <br />
-              <button className="button add-button" type="submit">
+              <button className='button add-button' type='submit'>
                 Add Employer
               </button>
             </form>
@@ -214,14 +214,14 @@ class AddModal extends Component {
     return (
       <div>
         <ReactModal
-          name="addModal"
+          name='addModal'
           isOpen={this.state.showAddModal}
-          contentLabel="Add Modal"
+          contentLabel='Add Modal'
           style={customStyles}
         >
           {body}
           <button
-            className="button cancel-button"
+            className='button cancel-button'
             onClick={this.handleCloseAddModal}
           >
             Cancel

@@ -9,9 +9,9 @@ io.on('connection', (socket) => {
     socket.broadcast.emit('user_join', name);
   });
 
-  socket.on('message', ({ name, message }) => {
+  socket.on('message', ({name, message}) => {
     console.log(name, message, socket.id);
-    io.emit('message', { name, message });
+    io.emit('message', {name, message});
   });
 
   socket.on('disconnect', () => {

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import axios from 'axios';
 import noImage from '../img/download.jpeg';
 
@@ -15,7 +15,7 @@ class Show extends Component {
 
   async getShow() {
     try {
-      const { data } = await axios.get(
+      const {data} = await axios.get(
         `http://api.tvmaze.com/shows/${this.props.match.params.id}`
       );
 
@@ -32,12 +32,12 @@ class Show extends Component {
     const regex = /(<([^>]+)>)/gi;
 
     body = (
-      <div className="show-body">
-        <h3 className="cap-first-letter">
+      <div className='show-body'>
+        <h3 className='cap-first-letter'>
           {(this.state.data && this.state.data.name) || 'No Title'}
         </h3>
         <img
-          alt="Show"
+          alt='Show'
           src={
             (this.state.data &&
               this.state.data.image &&
