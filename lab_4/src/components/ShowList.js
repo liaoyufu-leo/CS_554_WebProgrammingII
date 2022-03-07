@@ -83,7 +83,6 @@ const ShowList = (props) => {
     }
     if (searchTerm) {
       console.log('searchTerm is set');
-      setIndex(0);
       fetchData();
     }
   }, [searchTerm]);
@@ -146,9 +145,6 @@ const ShowList = (props) => {
       });
   }
 
-  const preLink = '/shows/page/' + (index - 1);
-  const nextLink = '/shows/page/' + (index + 1);
-
   if (loading) {
     return (
       <div>
@@ -162,9 +158,9 @@ const ShowList = (props) => {
         {
           searchTerm === '' ?
             (<div>
-              {index !== 0 ? <Link className='navigation' to={preLink} onClick={() => setIndex(index - 1)} >Pre</Link> : undefined}
+              {index !== 0 ? <Link className='navigation' to={`/shows/page/${index-1}`} onClick={() => setIndex(index - 1)} >Pre</Link> : undefined}
               <span> Page: {index}  </span>
-              {index !== 243 ? <Link className='navigation' to={nextLink} onClick={() => setIndex(index + 1)} >Next</Link> : undefined}
+              {index !== 243 ? <Link className='navigation' to={`/shows/page/${index+1}`} onClick={() => setIndex(index + 1)} >Next</Link> : undefined}
             </div>) :
             undefined
         }
