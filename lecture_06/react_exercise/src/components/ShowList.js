@@ -148,7 +148,7 @@ const ShowList = (props) => {
   if (loading) {
     return (
       <div>
-        <h2>Loading....</h2>
+        <h2>404 Not Found</h2>
       </div>
     );
   } else {
