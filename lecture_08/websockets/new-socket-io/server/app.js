@@ -5,13 +5,14 @@ var io = require('socket.io')(http);
 io.on('connection', (socket) => {
   console.log('new client connected', socket.id);
 
-  let oroom; 
+  let oroom ;
 
   socket.on('user_join', (name,room) => {
-    
+
     oroom = room;
 
-    socket.to(room).emit('user_join', name);
+    socket.join(room);
+    socket.to(oroom).emit('user_join', name);
   });
 
   socket.on('message', ({name, message}) => {

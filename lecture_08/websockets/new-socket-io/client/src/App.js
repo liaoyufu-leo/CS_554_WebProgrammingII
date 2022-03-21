@@ -5,6 +5,8 @@ import './App.css';
 function App() {
   const [state, setState] = useState({message: '', name: ''});
   const [chat, setChat] = useState([]);
+  const [room, setRoom] = useState();
+  const [name, setName] = useState();
 
   const socketRef = useRef();
 
@@ -27,8 +29,10 @@ function App() {
     });
   }, [chat]);
 
-  const userjoin = (name) => {
-    socketRef.current.emit('user_join', name);
+  const userjoin = (name,room) => {
+    socketRef.current.emit('user_join', name,room);
+    setRoom(room);
+    setName(name);
   };
 
   const onMessageSubmit = (e) => {
@@ -60,11 +64,11 @@ function App() {
       {state.name && (
         <div className='card'>
           <div className='render-chat'>
-            <h1>Chat Log</h1>
+            <h1>Chat Room:{room}</h1>
             {renderChat()}
           </div>
           <form onSubmit={onMessageSubmit}>
-            <h1>Messenger</h1>
+            <h1>Messenger: {name}</h1>
             <div>
               <input
                 name='message'
@@ -85,7 +89,7 @@ function App() {
             console.log(document.getElementById('username_input').value);
             e.preventDefault();
             setState({name: document.getElementById('username_input').value});
-            userjoin(document.getElementById('username_input').value);
+            userjoin(document.getElementById('username_input').value,document.getElementById('room_input').value);
             // userName.value = '';
           }}
         >
@@ -94,6 +98,12 @@ function App() {
               User Name:
               <br />
               <input id='username_input' />
+              <br />
+            </label>
+            <label>
+              Room:
+              <br />
+              <input id='room_input' />
             </label>
           </div>
           <br />
