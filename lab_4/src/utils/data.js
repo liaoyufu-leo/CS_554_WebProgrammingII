@@ -12,7 +12,7 @@ async function data(target) {
     const url = baseUrl + 'ts=' + ts + '&apikey=' + publickey + '&hash=' + hash;
 
     const { data } = await axios.get(url);
-    console.log(url);
+    // console.log(url);
     return data;
 
 }

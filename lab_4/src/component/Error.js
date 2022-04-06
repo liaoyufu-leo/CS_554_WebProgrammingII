@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';;
+import { useLocation, Link } from 'react-router-dom';;
 
 
 export default function Error() {
@@ -7,6 +7,7 @@ export default function Error() {
 
   return (
     <div>
+      <Link to="/">Home</Link>
       <h1>404 Error</h1>
       <div>{location.state.description}</div>
     </div>

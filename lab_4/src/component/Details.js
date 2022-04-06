@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-
-import noImage from '../download.jpeg';
+import { useParams, useNavigate, Link } from 'react-router-dom';
+import { Grid } from '@mui/material';
 
 const { data } = require('../utils/data');
 
@@ -27,11 +26,16 @@ export default function Character() {
 
     fetchData();
   }, []);
+
   return (
     <div>
+      <Grid item xs={2}>
+        <Link to="/">Home</Link>
+      </Grid>
+
       <h1>{category} Details</h1>
       <div>{category} ID:{id}</div>
-      <div>{details.name ? category+ " Name: " + details.name : category+ " Title " + details.title}</div>
+      <div>{!details ? null : (details.name ? category + " Name: " + details.name : category + " Title: " + details.title)}</div>
     </div>
   )
 }

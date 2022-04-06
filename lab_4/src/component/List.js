@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 
 import { Stack, Grid, Pagination } from '@mui/material';
 import { Box, List, ListItem, ListItemButton, ListItemText, Divider } from '@mui/material';
 
 const { data } = require('../utils/data');
+
 
 export default function Characters() {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ export default function Characters() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await data(`${category}?offset=${page*limit}&`);
+        const res = await data(`${category}?offset=${page * limit}&`);
 
         if (res.code === 200 && res.data.count !== 0) {
           setDataR(res.data);
@@ -35,19 +36,24 @@ export default function Characters() {
   }, [page]);
 
   const handlePageChange = (event, value) => {
-    setPage(value-1);
-    navigate(`/${category}/page/${value-1}`);
+    setPage(value - 1);
+    navigate(`/${category}/page/${value - 1}`);
   };
 
   return (
     <div>
+
+      <Grid item xs={2}>
+        <Link to="/">Home</Link>
+      </Grid>
+
       {!dataR ? null :
         <div>
           <h1>{category} List</h1>
           <Grid>
             <Grid container justifyContent="center">
               <Stack>
-                <Pagination count={Math.ceil(dataR.total / dataR.limit)} page={page+1} onChange={handlePageChange} color="primary" showFirstButton showLastButton />
+                <Pagination count={Math.ceil(dataR.total / dataR.limit)} page={page + 1} onChange={handlePageChange} color="primary" showFirstButton showLastButton />
               </Stack>
 
             </Grid>
