@@ -78,11 +78,11 @@ const resolvers = {
             await client.connect();
 
             const data = await client.HGETALL("posts");
-            console.log(Object.values(data))
+            // console.log(Object.values(data))
             const postData = Object.values(data).map(ele => JSON.parse(ele)).filter(ele => ele.binned === true);
             await client.quit();
 
-            console.log(postData);
+            // console.log(postData);
             return postData;
         },
         userPostedImages: async () => {
@@ -123,7 +123,6 @@ const resolvers = {
                 await client.HSET("posts", args.id, args);
             } else {
                 const info = await client.HDEL("posts", args.id);
-                console.log(info);
             }
 
             await client.quit();
@@ -136,7 +135,6 @@ const resolvers = {
             await client.connect();
 
             const info = await client.HDEL("posts", args.id);
-            console.log(info);
 
             await client.quit();
 
