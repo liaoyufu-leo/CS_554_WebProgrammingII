@@ -8,20 +8,15 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 
-import { useQuery, useMutation } from '@apollo/client';
+import { useMutation } from '@apollo/client';
 import queries from './queries';
-
 
 export default function ImaList(props) {
     const postData = props.postData;
 
-    const addTobins = (ele) => {
-        console.log("add "+ele);
-    }
+    const [bins] = useMutation(queries['updateImage']);
 
-    const removeFrombins = (ele) => {
-        console.log("remove "+ele);
-    }
+    const [delImg] = useMutation(queries['deleteImage']);
 
     return (
         Object.values(postData).map(ele => {
@@ -42,14 +37,32 @@ export default function ImaList(props) {
                             </Typography>
                         </CardContent>
                         <CardActions>
+                            <Button size="small" onClick={() => {
+                                bins({
+                                    variables: {
+                                        "updateImageId": ele.id,
+                                        "url": ele.url,
+                                        "posterName": ele.posterName,
+                                        "description": ele.description,
+                                        "userPosted": ele.userPosted,
+                                        "binned": !ele.binned
+                                    }
+                                });
+                            }}>{ele.binned ? "Remove from bin" : "Add to bin"}</Button>
                             {
-                                ele.binned ?
-                                    <Button size="small" onClick={() => removeFrombins(ele)}>Remove from bin</Button> :
-                                    <Button size="small" onClick={() => addTobins(ele)}>Add to bin</Button>
+                                !ele.userPosted ?
+                                    "" :
+                                    <Button size="small"
+                                        onClick={() => {
+                                            delImg({
+                                                variables: { "deleteImageId": ele.id }
+                                            });
+                                            delete postData[ele.id];
+                                        }}>Delete</Button>
                             }
                         </CardActions>
                     </Card>
-                </Grid>
+                </Grid >
             );
         })
     )

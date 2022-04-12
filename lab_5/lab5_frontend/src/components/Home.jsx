@@ -9,7 +9,7 @@ import ImaList from "./ImaList";
 import queries from './queries';
 
 export default function Home() {
-
+    
     const [pageNum, setPageNum] = useState(1);
     const [postData, setPostData] = useState({});
 

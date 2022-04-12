@@ -36,29 +36,24 @@ function App() {
         <AppBar position="static">
           <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={1}>
-              <Grid item xs={2} container direction="column" alignItems="center">
+              <Grid item xs={3} container direction="column" alignItems="center">
                 <NavLink className='navlink' to='/'>
                   <Button color="warning">Home</Button>
                 </NavLink>
               </Grid>
-              <Grid item xs={2} container direction="column" alignItems="center">
+              <Grid item xs={3} container direction="column" alignItems="center">
                 <NavLink className='navlink' to='/my-bin'>
                   <Button color="warning">My Bin</Button>
                 </NavLink>
               </Grid>
-              <Grid item xs={2} container direction="column" alignItems="center">
+              <Grid item xs={3} container direction="column" alignItems="center">
                 <NavLink className='navlink' to='/my-posts'>
                   <Button color="warning">My Posts</Button>
                 </NavLink>
               </Grid>
-              <Grid item xs={2} container direction="column" alignItems="center">
+              <Grid item xs={3} container direction="column" alignItems="center">
                 <NavLink className='navlink' to='/new-post'>
                   <Button color="warning">New Post</Button>
-                </NavLink>
-              </Grid>
-              <Grid item xs={2} container direction="column" alignItems="center">
-                <NavLink className='navlink' to='/popularity'>
-                  <Button color="warning">Popularity</Button>
                 </NavLink>
               </Grid>
             </Grid>
